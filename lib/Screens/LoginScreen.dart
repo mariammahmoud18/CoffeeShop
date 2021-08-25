@@ -7,7 +7,6 @@ import 'RegistrationScreen.dart';
 
 final TextEditingController emailController = new TextEditingController();
 final TextEditingController passwordController = new TextEditingController();
-final TextEditingController budgetController = new TextEditingController();
 
 
 class LoginScreen extends StatelessWidget {
@@ -68,23 +67,7 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
           ),
-           Container(
-            padding: EdgeInsets.all(10.0),
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(50)),
-            child: TextFormField(
-              controller: budgetController,
-              style: GoogleFonts.dancingScript(textStyle: TextStyle(color: Colors.black),fontSize: 25 ,fontWeight: FontWeight.bold),
-              textAlign: TextAlign.start,
-              obscureText: true,
-              decoration: InputDecoration(
-                filled:true,
-                fillColor: nodeColor,
-                labelText: "Budget",
-                prefixIcon: Icon(Icons.money),
-                border: OutlineInputBorder(),
-              ),
-            ),
-          ),
+          
           Mybutton(txt:"Login", snackTXT: "Login Successfully",),
           Container(
               padding: EdgeInsets.all(5.0),
