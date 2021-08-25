@@ -9,7 +9,6 @@ import 'package:coffee_shop/Properities/Classes.dart';
 
 final TextEditingController emailController = new TextEditingController();
 final TextEditingController passwordController = new TextEditingController();
-final TextEditingController budgetController = new TextEditingController();
 final TextEditingController addresstController = new TextEditingController();
 
 
@@ -82,27 +81,7 @@ class RegistrationScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Container(
-                        padding: EdgeInsets.all(10.0),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(100)),
-                        child: TextFormField(
-                          controller: budgetController,
-                          style: GoogleFonts.dancingScript(
-                              textStyle: TextStyle(color: Colors.black),
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold),
-                          textAlign: TextAlign.start,
-                          decoration: InputDecoration(
-                            filled: true,
-                            fillColor: nodeColor,
-                            labelText: "Budget",
-                            prefixIcon:
-                                Icon(Icons.account_balance_wallet_rounded),
-                            border: OutlineInputBorder(),
-                          ),
-                        ),
-                      ),
+                      
                       Container(
                         padding: EdgeInsets.all(10.0),
                         decoration: BoxDecoration(
@@ -124,9 +103,7 @@ class RegistrationScreen extends StatelessWidget {
                         ),
                       ),
                       
-
                           Container(
-
                             child: GenderPickerWithImage(
                             showOtherGender: false,
                             verticalAlignedText: false,
@@ -143,9 +120,8 @@ class RegistrationScreen extends StatelessWidget {
                             opacityOfGradient: 0.4,
                             padding: const EdgeInsets.all(3),
                             size: 50, //default : 40
-            )
+                            )
                           ),
-
                           Container(
                           height: 50,
                           padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
