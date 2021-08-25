@@ -31,3 +31,11 @@ Widget displayProductsItems({required Products products, required BuildContext c
   );
 }
 
+AppBar buildAppBar({required String title}) {
+  return AppBar(
+    title: Text(title),
+    backgroundColor: darkNodeColor,
+  );
+}
+
+
