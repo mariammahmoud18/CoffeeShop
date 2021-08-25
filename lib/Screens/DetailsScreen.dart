@@ -1,4 +1,5 @@
 
+import 'package:coffee_shop/Properities/Building%20functions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +10,7 @@ class DetailsScreen extends StatelessWidget
   Widget build(BuildContext context) {
    return SafeArea(
      child: Scaffold(
+     appBar: buildAppBar(title: 'Details'),
        
      )
    );
