@@ -13,8 +13,8 @@ class SplashScreen extends StatelessWidget {
     return SafeArea(child: Scaffold(
           body: AnimatedSplashScreen(
           duration: 3000,
-          splash:  "images/splash5.jpg",
-          
+          splash: "images/Coffee splash1.png",
+          splashIconSize: 300,
           splashTransition: SplashTransition.fadeTransition,
           backgroundColor: lightNodeColor,
           disableNavigation:false,
