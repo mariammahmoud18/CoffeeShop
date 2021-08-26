@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
 import 'Constants.dart';
+import 'Products.dart';
 
 class BuildingAtext extends StatelessWidget {
   final String txt;
@@ -66,4 +67,21 @@ extension EmailValidator on String {
             r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
         .hasMatch(this);
   }
+}
+
+class displayProductDetails extends StatelessWidget {
+final int ID;
+ displayProductDetails({required this.ID});
+ Widget build(BuildContext context) {
+   return Column(children: [
+                        
+      Image(image: products[ID].productImage,fit: BoxFit.fitHeight,height: 250,width: 250),
+      BuildingAtext(txt: products[ID].productName,color:darkNodeColor,fontSize: 60),
+      BuildingAtext(txt:" ${(products[ID].productPrice).toString()} \$",color:darkNodeColor,fontSize: 40),
+      BuildingAtext(txt: products[ID].productDescription,color:darkNodeColor,fontSize: 30),
+      
+
+   ],);
+ }
+
 }
