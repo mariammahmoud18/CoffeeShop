@@ -12,9 +12,10 @@ class DetailsScreen extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     final idk = ModalRoute.of(context)!.settings.arguments;
+    int index=int.parse(idk.toString());
    return SafeArea(
      child: Scaffold(
-     appBar: buildAppBar(title: 'Details'),
+     appBar: buildAppBar(title: '${products[index].productName} Details'),
        backgroundColor:darkPink,
       body: Center(
       //child: displayProductDetails(Product: idk)
