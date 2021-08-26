@@ -9,6 +9,7 @@ Widget displayProductsItems({required Products products, required BuildContext c
   
   return GestureDetector(
     onTap: () {
+      
       Navigator.pushNamed(context, DetailsScreen.routeName, arguments: products);
     },
     child: Container(

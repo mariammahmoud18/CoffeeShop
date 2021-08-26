@@ -11,13 +11,14 @@ class DetailsScreen extends StatelessWidget
   static String routeName='DetailsScreen';
   @override
   Widget build(BuildContext context) {
-    Object? Products = ModalRoute.of(context)!.settings.arguments;
+    final idk = ModalRoute.of(context)!.settings.arguments;
    return SafeArea(
      child: Scaffold(
      appBar: buildAppBar(title: 'Details'),
        backgroundColor:darkPink,
       body: Center(
-      child: displayProductDetails(Product: Products)
+      //child: displayProductDetails(Product: idk)
+      
        
       ),
       ),
