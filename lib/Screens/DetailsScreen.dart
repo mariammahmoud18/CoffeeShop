@@ -96,7 +96,7 @@ Dialog leadDialog = Dialog(
               decoration: InputDecoration(
                 filled:true,
                 fillColor: nodeColor,
-                labelText: "Expirtaion Date",
+                labelText: "Expiration Date",
                 border: OutlineInputBorder(),
               ),
             ),),
