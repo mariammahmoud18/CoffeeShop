@@ -7,8 +7,8 @@ import 'package:gender_picker/source/gender_picker.dart';
 import 'package:coffee_shop/Properities/Classes.dart';
 
 
-final TextEditingController emailController = new TextEditingController();
-final TextEditingController passwordController = new TextEditingController();
+final TextEditingController emailController2 = new TextEditingController();
+final TextEditingController passwordController2 = new TextEditingController();
 final TextEditingController addresstController = new TextEditingController();
 
 
@@ -40,7 +40,7 @@ class RegistrationScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(100)),
                         
                         child: TextFormField(
-                          controller: emailController,
+                          controller: emailController2,
                            autovalidateMode: AutovalidateMode.onUserInteraction,
                             validator: (emailController) => emailController!.isValidEmail() ? null : "Check your email",
                           
@@ -64,7 +64,7 @@ class RegistrationScreen extends StatelessWidget {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50)),
                         child: TextFormField(
-                          controller: passwordController,
+                          controller: passwordController2,
                           style: GoogleFonts.dancingScript(
                               textStyle: TextStyle(color: Colors.black),
                               fontSize: 25,

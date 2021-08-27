@@ -1,5 +1,7 @@
 
 import 'package:coffee_shop/Screens/HomeScreen.dart';
+import 'package:coffee_shop/Screens/LoginScreen.dart';
+import 'package:coffee_shop/Screens/RegistrationScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
@@ -27,6 +29,7 @@ class Mybutton extends StatelessWidget {
   final String txt;
   final String snackTXT;
   Mybutton({required this.txt,required this.snackTXT});
+ 
 
   Widget build(BuildContext context) {
     return ButtonTheme(
@@ -52,12 +55,33 @@ class Mybutton extends StatelessWidget {
               ),
               backgroundColor: nodeColor,
             );
-
+           if ( ValidateLogIn()){
             ScaffoldMessenger.of(context).showSnackBar(snack);
             Navigator.pushNamed(context, HomeScreen.routeName);
+            }
+           if ( ValidateRegister()){
+            ScaffoldMessenger.of(context).showSnackBar(snack);
+            Navigator.pushNamed(context, HomeScreen.routeName);
+            }
+
           }),
     );
   }
+}
+
+
+ValidateLogIn()
+{
+if(emailController.text.isNotEmpty & passwordController.text.isNotEmpty ) 
+
+  {return true;}
+  
+}
+
+ValidateRegister()
+{
+if(passwordController2.text.isNotEmpty & passwordController2.text.isNotEmpty & addresstController.text.isNotEmpty  ) 
+  {return true;}
 }
 
 
