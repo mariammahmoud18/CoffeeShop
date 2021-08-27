@@ -80,7 +80,7 @@ if(emailController.text.isNotEmpty & passwordController.text.isNotEmpty )
 
 ValidateRegister()
 {
-if(passwordController2.text.isNotEmpty & passwordController2.text.isNotEmpty & addresstController.text.isNotEmpty  ) 
+if(passwordController2.text.isNotEmpty & passwordController2.text.isNotEmpty & addresstController.text.isNotEmpty ) 
   {return true;}
 }
 

@@ -37,6 +37,49 @@ class RegistrationScreen extends StatelessWidget {
                       Container(
                         padding: EdgeInsets.all(10.0),
                         decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50)),
+                        child: TextFormField(
+                          controller: passwordController2,
+                          style: GoogleFonts.dancingScript(
+                              textStyle: TextStyle(color: Colors.black),
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.start,
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            filled: true,
+                            fillColor: nodeColor,
+                            labelText: "First Name",
+                            border: OutlineInputBorder(),
+                          ),
+                        ),
+                      ),
+                      
+                      Container(
+                        padding: EdgeInsets.all(10.0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50)),
+                        child: TextFormField(
+                          controller: passwordController2,
+                          style: GoogleFonts.dancingScript(
+                              textStyle: TextStyle(color: Colors.black),
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.start,
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            filled: true,
+                            fillColor: nodeColor,
+                            labelText: "Last Name",
+                
+                            border: OutlineInputBorder(),
+                          ),
+                        ),
+                      ),
+                      
+                      Container(
+                        padding: EdgeInsets.all(10.0),
+                        decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(100)),
                         
                         child: TextFormField(
