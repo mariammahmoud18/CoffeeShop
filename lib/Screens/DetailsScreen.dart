@@ -1,5 +1,4 @@
 
-import 'dart:js';
 
 import 'package:coffee_shop/Properities/Building%20functions.dart';
 import 'package:coffee_shop/Properities/Classes.dart';

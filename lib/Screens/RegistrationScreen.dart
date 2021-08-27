@@ -7,9 +7,11 @@ import 'package:gender_picker/source/gender_picker.dart';
 import 'package:coffee_shop/Properities/Classes.dart';
 
 
-final TextEditingController emailController2 = new TextEditingController();
-final TextEditingController passwordController2 = new TextEditingController();
+final TextEditingController regemailController = new TextEditingController();
+final TextEditingController regpasswordController = new TextEditingController();
 final TextEditingController addresstController = new TextEditingController();
+final TextEditingController firstnameController = new TextEditingController();
+final TextEditingController lastnameController = new TextEditingController();
 
 
 
@@ -32,20 +34,19 @@ class RegistrationScreen extends StatelessWidget {
                       BuildingAtext(
                         txt: "Register",
                         color: nodeColor,
-                        fontSize: 50,
+                        fontSize: 40,
                       ),
                       Container(
                         padding: EdgeInsets.all(10.0),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50)),
                         child: TextFormField(
-                          controller: passwordController2,
+                          controller: firstnameController,
                           style: GoogleFonts.dancingScript(
                               textStyle: TextStyle(color: Colors.black),
                               fontSize: 25,
                               fontWeight: FontWeight.bold),
                           textAlign: TextAlign.start,
-                          obscureText: true,
                           decoration: InputDecoration(
                             filled: true,
                             fillColor: nodeColor,
@@ -60,13 +61,12 @@ class RegistrationScreen extends StatelessWidget {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50)),
                         child: TextFormField(
-                          controller: passwordController2,
+                          controller: lastnameController,
                           style: GoogleFonts.dancingScript(
                               textStyle: TextStyle(color: Colors.black),
                               fontSize: 25,
                               fontWeight: FontWeight.bold),
                           textAlign: TextAlign.start,
-                          obscureText: true,
                           decoration: InputDecoration(
                             filled: true,
                             fillColor: nodeColor,
@@ -83,7 +83,7 @@ class RegistrationScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(100)),
                         
                         child: TextFormField(
-                          controller: emailController2,
+                          controller: regemailController,
                            autovalidateMode: AutovalidateMode.onUserInteraction,
                             validator: (emailController) => emailController!.isValidEmail() ? null : "Check your email",
                           
@@ -107,7 +107,7 @@ class RegistrationScreen extends StatelessWidget {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50)),
                         child: TextFormField(
-                          controller: passwordController2,
+                          controller: regpasswordController,
                           style: GoogleFonts.dancingScript(
                               textStyle: TextStyle(color: Colors.black),
                               fontSize: 25,
@@ -166,7 +166,7 @@ class RegistrationScreen extends StatelessWidget {
                             )
                           ),
                           Container(
-                          height: 50,
+                          height: 30,
                           padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                           child: Mybutton(txt:"Sign Up", snackTXT: "Signed Up Successfully",),),
                     ]))));

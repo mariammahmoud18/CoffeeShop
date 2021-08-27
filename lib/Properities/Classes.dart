@@ -55,14 +55,11 @@ class Mybutton extends StatelessWidget {
               ),
               backgroundColor: nodeColor,
             );
-           if ( ValidateLogIn()){
+           if ( ValidateLogIn() || ValidateRegister()){
             ScaffoldMessenger.of(context).showSnackBar(snack);
             Navigator.pushNamed(context, HomeScreen.routeName);
             }
-           if ( ValidateRegister()){
-            ScaffoldMessenger.of(context).showSnackBar(snack);
-            Navigator.pushNamed(context, HomeScreen.routeName);
-            }
+           
 
           }),
     );
@@ -72,7 +69,7 @@ class Mybutton extends StatelessWidget {
 
 ValidateLogIn()
 {
-if(emailController.text.isNotEmpty & passwordController.text.isNotEmpty ) 
+if(emailController.text.isNotEmpty && passwordController.text.isNotEmpty ) 
 
   {return true;}
   
@@ -80,7 +77,7 @@ if(emailController.text.isNotEmpty & passwordController.text.isNotEmpty )
 
 ValidateRegister()
 {
-if(passwordController2.text.isNotEmpty & passwordController2.text.isNotEmpty & addresstController.text.isNotEmpty ) 
+if(regpasswordController.text.isNotEmpty && regpasswordController.text.isNotEmpty && addresstController.text.isNotEmpty && firstnameController.text.isNotEmpty && lastnameController.text.isNotEmpty ) 
   {return true;}
 }
 
