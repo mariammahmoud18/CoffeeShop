@@ -94,5 +94,24 @@
       loadMainDartJs();
     }
   </script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBTPotj4WM-m9kk9avQ3HQn07vSmj050SY",
+      authDomain: "coffeshop-a85dc.firebaseapp.com",
+      projectId: "coffeshop-a85dc",
+      storageBucket: "coffeshop-a85dc.appspot.com",
+      messagingSenderId: "803330605942",
+      appId: "1:803330605942:web:bd9d36adaa18a5d0687057"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  </script>
 </body>
 </html>
