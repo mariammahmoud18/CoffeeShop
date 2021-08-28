@@ -8,7 +8,6 @@ import 'package:coffee_shop/Properities/Classes.dart';
 
 
 final TextEditingController regemailController = new TextEditingController();
-final TextEditingController regpasswordController = new TextEditingController();
 final TextEditingController addresstController = new TextEditingController();
 final TextEditingController firstnameController = new TextEditingController();
 final TextEditingController lastnameController = new TextEditingController();
@@ -102,28 +101,7 @@ class RegistrationScreen extends StatelessWidget {
                         ),
                         ),
                       
-                      Container(
-                        padding: EdgeInsets.all(10.0),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50)),
-                        child: TextFormField(
-                          controller: regpasswordController,
-                          style: GoogleFonts.dancingScript(
-                              textStyle: TextStyle(color: Colors.black),
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold),
-                          textAlign: TextAlign.start,
-                          obscureText: true,
-                          decoration: InputDecoration(
-                            filled: true,
-                            fillColor: nodeColor,
-                            labelText: "Password",
-                            prefixIcon: Icon(Icons.lock),
-                            suffixIcon: Icon(Icons.visibility),
-                            border: OutlineInputBorder(),
-                          ),
-                        ),
-                      ),
+                      Password(),
                       
                       Container(
                         padding: EdgeInsets.all(10.0),
@@ -159,7 +137,6 @@ class RegistrationScreen extends StatelessWidget {
                             equallyAligned: true,
                             animationDuration: Duration(milliseconds: 300),
                             isCircular: true,
-              // default : true,
                             opacityOfGradient: 0.4,
                             padding: const EdgeInsets.all(3),
                             size: 50, //default : 40

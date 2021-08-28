@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 import 'Constants.dart';
 import 'Products.dart';
 
+final TextEditingController passwordController = new TextEditingController();
+
 class BuildingAtext extends StatelessWidget {
   final String txt;
   final Color color;
@@ -54,12 +56,17 @@ class Mybutton extends StatelessWidget {
                     color: Colors.white),
               ),
               backgroundColor: nodeColor,
+              duration: Duration(seconds: 2),
             );
            if ( ValidateLogIn() || ValidateRegister()){
             ScaffoldMessenger.of(context).showSnackBar(snack);
             Navigator.pushNamed(context, HomeScreen.routeName);
             }
            
+           else{
+             final snackBar = SnackBar(content: Text('Fill All Of The Required Information!'), duration: Duration(seconds: 2), backgroundColor: Colors.red ,);
+             ScaffoldMessenger.of(context).showSnackBar(snackBar);
+           }
 
           }),
     );
@@ -67,18 +74,20 @@ class Mybutton extends StatelessWidget {
 }
 
 
-ValidateLogIn()
+bool ValidateLogIn()
 {
 if(emailController.text.isNotEmpty && passwordController.text.isNotEmpty ) 
 
   {return true;}
+  else {return false;}
   
 }
 
-ValidateRegister()
+bool ValidateRegister()
 {
-if(regpasswordController.text.isNotEmpty && regpasswordController.text.isNotEmpty && addresstController.text.isNotEmpty && firstnameController.text.isNotEmpty && lastnameController.text.isNotEmpty ) 
+if(regemailController.text.isNotEmpty && passwordController.text.isNotEmpty && addresstController.text.isNotEmpty && firstnameController.text.isNotEmpty && lastnameController.text.isNotEmpty ) 
   {return true;}
+  else {return false;}
 }
 
 
@@ -105,4 +114,41 @@ final int ID;
    ],);
  }
 
+}
+
+ class Password extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() {
+    return passwordState();
+    //throw UnimplementedError();
+  }}
+
+class passwordState extends State<Password> {
+  bool _isObscure = true;
+  @override
+  Widget build(BuildContext context) {
+    return  Container(
+            padding: EdgeInsets.all(10.0),
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(50)),
+            child: TextFormField(
+              controller: passwordController,
+              style: GoogleFonts.dancingScript(textStyle: TextStyle(color: Colors.black),fontSize: 25 ,fontWeight: FontWeight.bold),
+              textAlign: TextAlign.start,
+               obscureText: _isObscure,
+              decoration: InputDecoration(
+                filled:true,
+                fillColor: nodeColor,
+                labelText: "Password",
+                border: OutlineInputBorder(),
+                prefixIcon: Icon(Icons.lock),
+                suffixIcon: IconButton(
+                    icon: Icon(
+                        _isObscure ? Icons.visibility : Icons.visibility_off),
+                    onPressed: () {
+                      setState(() {
+                        _isObscure = !_isObscure;
+                      });
+                    })),
+          ),
+        ); }
 }
