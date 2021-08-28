@@ -1,10 +1,13 @@
 
 import 'package:coffee_shop/Screens/HomeScreen.dart';
+import 'package:coffee_shop/Screens/LoginScreen.dart';
+import 'package:coffee_shop/Screens/RegistrationScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
 import 'Constants.dart';
+import 'Products.dart';
 
 class BuildingAtext extends StatelessWidget {
   final String txt;
@@ -26,6 +29,7 @@ class Mybutton extends StatelessWidget {
   final String txt;
   final String snackTXT;
   Mybutton({required this.txt,required this.snackTXT});
+ 
 
   Widget build(BuildContext context) {
     return ButtonTheme(
@@ -51,12 +55,32 @@ class Mybutton extends StatelessWidget {
               ),
               backgroundColor: nodeColor,
             );
-
+           if ( ValidateLogIn() || ValidateRegister()){
             ScaffoldMessenger.of(context).showSnackBar(snack);
             Navigator.pushNamed(context, HomeScreen.routeName);
+            }
+           
+
           }),
     );
   }
+}
+
+
+bool ValidateLogIn()
+{
+if(emailController.text.isNotEmpty && passwordController.text.isNotEmpty ) 
+
+  {return true;}
+  else return false;
+  
+}
+
+bool ValidateRegister()
+{
+if(regpasswordController.text.isNotEmpty && regpasswordController.text.isNotEmpty && addresstController.text.isNotEmpty && firstnameController.text.isNotEmpty && lastnameController.text.isNotEmpty ) 
+  {return true;}
+  else return false;
 }
 
 
@@ -66,4 +90,21 @@ extension EmailValidator on String {
             r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
         .hasMatch(this);
   }
+}
+
+class displayProductDetails extends StatelessWidget {
+final int ID;
+ displayProductDetails({required this.ID});
+ Widget build(BuildContext context) {
+   return Column(children: [
+                        
+      Image(image: products[ID].productImage,fit: BoxFit.fitHeight,height: 250,width: 250),
+      BuildingAtext(txt: products[ID].productName,color:darkNodeColor,fontSize: 60),
+      BuildingAtext(txt:" ${(products[ID].productPrice).toString()} \$",color:darkNodeColor,fontSize: 40),
+      BuildingAtext(txt: products[ID].productDescription,color:darkNodeColor,fontSize: 30),
+      
+
+   ],);
+ }
+
 }
