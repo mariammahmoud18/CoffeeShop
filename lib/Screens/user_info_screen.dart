@@ -1,11 +1,12 @@
+import 'package:coffee_shop/Properities/Constants.dart';
+import 'package:coffee_shop/Screens/LoginScreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:coffee_shop/res/custom_colors.dart';
-import 'package:coffee_shop/screens/sign_in_screen.dart';
 import 'package:coffee_shop/utils/authentication.dart';
 import 'package:coffee_shop/widgets/app_bar_title.dart';
 
 class UserInfoScreen extends StatefulWidget {
+
   const UserInfoScreen({Key? key, required User user})
       : _user = user,
         super(key: key);
@@ -19,10 +20,9 @@ class UserInfoScreen extends StatefulWidget {
 class _UserInfoScreenState extends State<UserInfoScreen> {
   late User _user;
   bool _isSigningOut = false;
-
   Route _routeToSignInScreen() {
     return PageRouteBuilder(
-      pageBuilder: (context, animation, secondaryAnimation) => SignInScreen(),
+      pageBuilder: (context, animation, secondaryAnimation) => LoginScreen(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         var begin = Offset(-1.0, 0.0);
         var end = Offset.zero;
@@ -49,10 +49,10 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomColors.firebaseNavy,
+      backgroundColor: nodeColor,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: CustomColors.firebaseNavy,
+        backgroundColor: darkNodeColor,
         title: AppBarTitle(),
       ),
       body: SafeArea(
@@ -69,7 +69,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
               _user.photoURL != null
                   ? ClipOval(
                       child: Material(
-                        color: CustomColors.firebaseGrey.withOpacity(0.3),
+                        color: offWhiteColor,
                         child: Image.network(
                           _user.photoURL!,
                           fit: BoxFit.fitHeight,
@@ -78,13 +78,13 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                     )
                   : ClipOval(
                       child: Material(
-                        color: CustomColors.firebaseGrey.withOpacity(0.3),
+                        color: offWhiteColor,
                         child: Padding(
                           padding: const EdgeInsets.all(16.0),
                           child: Icon(
                             Icons.person,
                             size: 60,
-                            color: CustomColors.firebaseGrey,
+                            color: darkPink,
                           ),
                         ),
                       ),
@@ -93,7 +93,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
               Text(
                 'Hello',
                 style: TextStyle(
-                  color: CustomColors.firebaseGrey,
+                  color: offWhiteColor,
                   fontSize: 26,
                 ),
               ),
@@ -101,7 +101,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
               Text(
                 _user.displayName!,
                 style: TextStyle(
-                  color: CustomColors.firebaseYellow,
+                  color: offWhiteColor,
                   fontSize: 26,
                 ),
               ),
@@ -109,7 +109,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
               Text(
                 '( ${_user.email!} )',
                 style: TextStyle(
-                  color: CustomColors.firebaseOrange,
+                  color: offWhiteColor,
                   fontSize: 20,
                   letterSpacing: 0.5,
                 ),
@@ -118,7 +118,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
               Text(
                 'You are now signed in using your Google account. To sign out of your account click the "Sign Out" button below.',
                 style: TextStyle(
-                    color: CustomColors.firebaseGrey.withOpacity(0.8),
+                    color: darkNodeColor,
                     fontSize: 14,
                     letterSpacing: 0.2),
               ),
